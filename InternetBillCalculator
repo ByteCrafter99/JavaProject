@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+class InternetBillCalculator {
+    public static void main(String[] args) {
+        GetMsg();
+        MyCalc();
+    }
+    static void GetMsg() {
+        System.out.println();                                      // Shows Welcome page to the user
+        System.out.println("------------------------");
+        System.out.println("INTERNET BILL CALCULATOR");
+        System.out.println("------------------------");
+    }
+    static void MyCalc() {
+        Scanner scanner = new Scanner(System.in); 
+        String choice;
+
+        do {
+            try {
+                System.out.print("Enter speed in: ");    // Ask User to enter speed
+                double MBPS = scanner.nextDouble();
+
+                System.out.print("Enter no. of months: ");
+                double months = scanner.nextDouble();
+                if (months < 3) {
+                    System.out.println("Pack unvailable for this duration ");
+                } else {
+                    double KBPS = MBPS * 125.0;
+                    System.out.println();
+                    System.out.println("===============================================");
+                    System.out.printf("The Speed in KBPS: %.2f KB/s%n", KBPS);
+                    System.out.printf("%.2f $ is your bill for %.0f Days%n", months * 45, months * 30);
+                    System.out.println("===============================================");
+                    System.out.println();
+                }
+            } catch (Exception e) {
+                System.out.println("Please enter a valid number.");
+                scanner.nextLine(); 
+            }
+            System.out.print("Do you want to Back? Press(yes/no): ");
+            choice = scanner.next().toLowerCase();
+            scanner.nextLine(); 
+        } while (choice.equals("yes"));
+        scanner.close();
+        System.out.println("Thank you! Goodbye");
+    }
+}
