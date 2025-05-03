@@ -1,3 +1,2 @@
-Program Overview
 The Internet Bill Calculator is a Java application that calculates internet service costs based on connection speed and subscription duration. It provides a simple command-line interface for users to input their desired internet speed and subscription length, then calculates and displays the bill amount.
 Suitable for internet service providers or customers who need to quickly calculate internet service costs based on standard pricing of $45 per month with a minimum 3-month commitment.
